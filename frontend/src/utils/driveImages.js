@@ -9,8 +9,8 @@ export const getDriveImageUrl = (fileId) => {
 // Store your Google Drive file IDs here
 // Get file ID from: https://drive.google.com/file/d/[FILE_ID]/view
 export const DRIVE_IMAGES = {
-  hero: '11sk8LgBD_7xRxDxlJIjG3myhRas7INoPS', // Your hero image
-  project1: 'YOUR_PROJECT1_FILE_ID',
+  hero: '1sk8LgBD_7xRxDxlJIjG3myhRas7INoPS', // Your hero image
+  project1: '1ReH7-KuSRKfgKTfhC-mg9Te2cpub0uMe',
   project2: 'YOUR_PROJECT2_FILE_ID',
   // Add more as needed
 };

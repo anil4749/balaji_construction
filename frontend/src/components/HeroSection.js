@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getDriveImageUrl, DRIVE_IMAGES } from '../utils/driveImages';
@@ -6,15 +5,25 @@ import { getDriveImageUrl, DRIVE_IMAGES } from '../utils/driveImages';
 export default function HeroSection() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const heroImageUrl = DRIVE_IMAGES?.hero ? getDriveImageUrl(DRIVE_IMAGES.hero) : '';
 
   return (
-    <section className="relative h-auto sm:h-screen sm:min-h-screen bg-cover bg-center bg-fixed" 
-      style={{backgroundImage: `url(${getDriveImageUrl(DRIVE_IMAGES.hero)})`}}>
+    <section className="relative w-full min-h-screen sm:min-h-screen overflow-hidden"> 
+      {/* Responsive Hero Image - No Cropping */}
+      <img 
+        src={heroImageUrl || '/placeholder-hero.jpg'}
+        alt="Hero Background"
+        className="absolute inset-0 w-full h-full object-contain object-center"
+        loading="lazy"
+        onError={(e) => e.target.style.display = 'none'}
+      />
       
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
       
-      <div className="relative max-w-7xl mx-auto h-auto sm:h-full flex items-center justify-center px-3 sm:px-4 py-12 sm:py-0">
-        <div className="text-center text-white">
+      {/* Content - Positioned on top of image and overlay */}
+      <div className="relative z-20 min-h-screen w-full max-w-7xl mx-auto flex items-center justify-center px-3 sm:px-4 py-12 sm:py-0">
+        <div className="text-center text-white w-full">
           <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4">{t('hero.title')}</h2>
           <p className="text-sm sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-8">{t('hero.subtitle')}</p>
           <p className="text-xs sm:text-base md:text-lg mb-4 sm:mb-8 max-w-2xl mx-auto">
