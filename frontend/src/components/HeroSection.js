@@ -9,11 +9,11 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full min-h-screen sm:min-h-screen overflow-hidden"> 
-      {/* Responsive Hero Image - No Cropping */}
+      {/* Responsive Hero Image - Fills entire section without gaps */}
       <img 
         src={heroImageUrl || '/placeholder-hero.jpg'}
         alt="Hero Background"
-        className="absolute inset-0 w-full h-full object-contain object-center"
+        className="absolute inset-0 w-full h-full object-cover object-center"
         loading="lazy"
         onError={(e) => e.target.style.display = 'none'}
       />
