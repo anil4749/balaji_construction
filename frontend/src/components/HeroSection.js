@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { getDriveImageUrl, DRIVE_IMAGES } from '../utils/driveImages';
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -8,7 +9,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-auto sm:h-screen sm:min-h-screen bg-cover bg-center bg-fixed" 
-      style={{backgroundImage: 'url(https://picsum.photos/1200/600?random=hero)'}}>
+      style={{backgroundImage: `url(${getDriveImageUrl(DRIVE_IMAGES.hero)})`}}>
       
       <div className="absolute inset-0 bg-black opacity-40"></div>
       

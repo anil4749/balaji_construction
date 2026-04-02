@@ -111,6 +111,10 @@ app.get('/api/health', (req, res) => {
 app.use('/api/inquiries', require('./routes/inquiries'));
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/contact', require('./routes/contact'));
+app.use('/api/images', require('./routes/images'));
+
+// Root-level images route (for direct /images/drive/... access)
+app.use('/images', require('./routes/images'));
 
 // 404 handler
 app.use((req, res) => {
