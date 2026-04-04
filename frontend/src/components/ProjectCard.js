@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function ProjectCard({ project }) {
-  const fallbackImage = 'https://picsum.photos/400/300';
+  const fallbackImage = 'https://balaji-api-guru.onrender.com/images/drive/1LKAwd5bWGCbqRgX0ZK2FzCIXkjnFgEkn';
   
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition flex flex-col h-full">
